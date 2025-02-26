@@ -1,0 +1,77 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            height: 100vh;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            background-color: #f5deb3;
+
+            align-items: center;
+
+        }
+
+        .small-box {
+            background-color: #00ffff;
+
+            align-items: center;
+
+        }
+
+        .sidebar {
+            background-color: #00ff00;
+            grid-row: 2 / 3;
+
+            align-items: center;
+        }
+
+        .maincontent {
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
+            background-color: #ffff00;
+
+            align-items: center;
+
+        }
+
+        footer {
+            grid-column: 1 / -1;
+            background-color: #0000ff;
+            align-items: center;
+            color: white;
+        }
+
+        .box-1 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        .box-2 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .box-3 {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+    </style>
+</head>
+<body>
+    <header>HEADER</header>
+    <div class="small-box box-1">SMALL BOX 1</div>
+    <div class="small-box box-2">SMALL BOX 2</div>
+    <div class="small-box box-3">SMALL BOX 3</div>
+    <div class="sidebar">SIDE BAR</div>
+    <div class="maincontent">MAIN CONTENT</div>
+    <footer>FOOTER</footer>
+</body>
+</html>

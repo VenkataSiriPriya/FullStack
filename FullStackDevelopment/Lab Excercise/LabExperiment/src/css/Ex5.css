@@ -1,0 +1,56 @@
+/* Ex5.css */
+
+/* Form Container */
+.form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Inputs */
+  .form-container .MuiTextField-root,
+  .form-container .MuiFormControl-root {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  /* Error Messages */
+  .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: -8px;
+  }
+  
+  /* Button Styling */
+  .submit-button {
+    background-color: #1976d2;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #125aa6;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #1976d2;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar .MuiButton-root {
+    color: white;
+  }
+  
+  .navbar .MuiButton-root:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }

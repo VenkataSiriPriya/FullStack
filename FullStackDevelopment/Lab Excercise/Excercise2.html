@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: chocolate;
+            display: grid;
+            margin: 5px;
+            grid-template-rows: 50px 100px 200px auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas: 
+                "header header header header"
+                "smallbox1 smallbox2 smallbox3 sidebar"
+                "maincontent maincontent maincontent sidebar"
+                "footer footer footer footer";
+            height: 100vh;
+        }
+        .header {
+            grid-area: header;
+            background-color: bisque;
+        }
+        .smallbox1 {
+            grid-area: smallbox1;
+            background-color: cyan;
+            border: 3px solid white;
+        }
+        .smallbox2 {
+            grid-area: smallbox2;
+            background-color: cyan;
+            border: 3px solid white;
+        }
+        .smallbox3 {
+            grid-area: smallbox3;
+            background-color: cyan;
+            border: 3px solid white;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(97, 180, 216);
+            border: 3px solid white;
+        }
+        .maincontent {
+            grid-area: maincontent;
+            background-color: rgb(30, 215, 82);
+
+        }
+        .footer {
+            grid-area: footer;
+            background-color: rgb(203, 47, 39);
+            border: 3px solid white;
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="header">HEADER</div>
+    <div class="smallbox1">SMALL BOX 1</div>
+    <div class="smallbox2">SMALL BOX 2</div>
+    <div class="smallbox3">SMALL BOX 3</div>
+    <div class="sidebar">SIDE BAR</div>
+    <div class="maincontent">MAIN CONTENT</div>
+    <div class="footer">FOOTER</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+.container{
+    border: 3px solid rgb(17, 200, 17);
+    padding: 10px;
+}
+.header{
+    display:flex;
+    border : 2px solid red;
+    padding: 10px;
+}
+.heading{
+    flex: 1;
+}
+.menu{
+    flex: 4;
+    text-align: end;
+}
+.menu span{
+    margin-left: 20px ;
+}
+.content{
+    display:  inline-flex;
+    padding: 50px;
+    margin: 50px;
+    width: 90%;
+    height: 90%;
+}
+.plogo{
+   background-color: aliceblue;
+   
+}
+.pdetails{
+    margin-left: 10px;
+}
+.footer{
+    border: 2px solid blue;     
+}
+.slogo{
+    padding: 10px;
+    text-align: center;
+
+}
+.slogo i{
+    padding-right: 100px;
+}
+.card1{
+    border: 2px solid blue;
+    flex:auto;
+}
+@media(max-width:800px){
+    .menu{
+         display: none;
+    }
+    .content{
+         display: block;
+    }
+    .pdetails{
+         margin-left: 0px;
+    }
+    .pother{
+         display: none;
+    }
+    .slogo{
+         text-align: center;
+         margin-right: 0px;
+    }
+}

@@ -1,0 +1,46 @@
+<html>
+    <head>
+<style>
+body{
+    background-color: chocolate;
+    display: grid;
+    margin: 5px;
+    grid-template-rows: 50px 50px auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "search search right"
+    "left middle right";
+    height: 100vh;
+
+}
+.header{
+    grid-area: header;
+    background-color: rgb(228, 46, 76);
+}
+.right{
+    grid-area: right;
+    background-color: beige;
+}
+.search{
+    grid-area: search;
+    background-color: bisque;
+}
+.left{
+    grid-area: left;
+    background-color: blueviolet;
+}
+.middle{
+    grid-area: middle;
+    background-color: aqua;
+}
+</style>
+    </head>
+    <body>
+        <div class="header">Header</div>
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+        <div class="middle">Middle</div>
+        <div class="search">Search</div>
+    </body>
+</html>

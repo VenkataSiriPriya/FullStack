@@ -1,0 +1,10 @@
+spring.application.name=JobPortalS21
+
+
+spring.datasource.dbcp2.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/jobportals21
+spring.datasource.username=root
+spring.datasource.password=Likki@2505
+
+
+spring.jpa.hibernate.ddl-auto=update
