@@ -6,6 +6,7 @@ export class ProjectHomePage extends Component {
     {
       super();
       this.userRegistration = this.userRegistration.bind(this);
+      this.forgotPassword = this.forgotPassword.bind(this);
     }
   
   showSignin(){
@@ -17,6 +18,10 @@ export class ProjectHomePage extends Component {
     signin.style.display="block";
     signup.style.display="none";
     popup.style.display="block";
+
+
+    username.value = "";
+    password.value= "";
   }
   showSignup(){
     let popup=document.getElementById("popup");
@@ -122,6 +127,29 @@ export class ProjectHomePage extends Component {
       }
   }
 
+  forgotPassword()
+  {
+    username.style.border= "";
+    if(username.value=== "")
+    {
+      username.style.border= "1px solid red";
+      username.focus()
+      return;
+    }
+
+    let url = "http://localhost:8080/users/forgotpassword/" + username.value;
+    callApi("Get", url, "", this.forgotPasswordResponse);
+  }
+
+  forgotPasswordResponse(res)
+  {
+      let data = res.split('::');
+      if (data[0] === "200")
+          responseDiv.innerHTML = `<br/><br/><label style='color:green'>${data[1]}</label>`;
+      else
+      responseDiv.innerHTML = `<br/><br/><label style='color:red'>${data[1]}</label>`;
+  }
+
   render() {
     return (
       <div id='base'>
@@ -133,10 +161,10 @@ export class ProjectHomePage extends Component {
                  <input type='text' id = 'username' />
                  <label className='passwordLabel'>Password:</label>
                  <input type='password' id = 'password' />
-                 <div className='forgotPassword'>Forgot<label>Password?</label></div>
+                 <div className='forgotPassword'>Forgot<label onClick={this.forgotPassword}>Password?</label></div>
                  <button className='signinButton'>Sign In</button>
          
-          <div className='div1'></div>
+          <div className='div1' id='responseDiv'></div>
           <div className='div2'>
                   Don't have an account?
                   <label onClick={this.showSignup}> SIGNUP NOW </label>
