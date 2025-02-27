@@ -113,7 +113,7 @@ export class ProjectHomePage extends Component {
               role : role.value,
               password : signuppassword.value
         })
-        callApi("POST", "http://localhost:8080/users/signup", data, this.getResponse)
+        callApi("POST", "http://localhost:8080/users/signup/", data, this.getResponse)
   }
   getResponse(res){
     let resp = res.split('::');
@@ -138,14 +138,14 @@ export class ProjectHomePage extends Component {
     }
 
     let url = "http://localhost:8080/users/forgotpassword/" + username.value;
-    callApi("Get", url, "", this.forgotPasswordResponse);
+    callApi("GET", url, "", this.forgotPasswordResponse);
   }
 
   forgotPasswordResponse(res)
   {
       let data = res.split('::');
       if (data[0] === "200")
-          responseDiv.innerHTML = `<br/><br/><label style='color:green'>${data[1]}</label>`;
+          responseDiv.innerHTML = `<br/><br/><label style='color:blue'>${data[1]}</label>`;
       else
       responseDiv.innerHTML = `<br/><br/><label style='color:red'>${data[1]}</label>`;
   }
