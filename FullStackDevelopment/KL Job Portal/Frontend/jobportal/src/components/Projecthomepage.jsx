@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import'../CSS/ProjectHomePage.css'
-import { callApi } from '../api';
+import { BASEURL,callApi,setSession } from '../api';
 export class ProjectHomePage extends Component {
   constructor()
     {
       super();
       this.userRegistration = this.userRegistration.bind(this);
       this.forgotPassword = this.forgotPassword.bind(this);
+      this.signin=this.signin.bind(this);
     }
   
   showSignin(){
@@ -150,6 +151,45 @@ export class ProjectHomePage extends Component {
       responseDiv.innerHTML = `<br/><br/><label style='color:red'>${data[1]}</label>`;
   }
 
+  signin()
+  {
+    username.style.border="";
+    password.style.border="";
+    responseDiv.innerHTML="";
+    if(username.value==="")
+    {
+      username.style.border="1px solid red";
+      username.focus();
+      return;
+    }
+    if(password.value==="")
+    {
+      password.style.border="1px solid red";
+      password.focuse();
+      return;
+    }
+    let data=JSON.stringify({
+      email:username.value,
+      password:password.value,
+    });
+    callApi("POST",BASEURL+"users/signin",data,this.signinResponse);
+
+  }
+
+  signinResponse(res)
+  {
+    let rdata=res.split('::');
+    if(radta[0]==='200')
+    {
+      setSession("csrid",rdata[1],1);
+      window.location.replace("/dashboard");
+    }
+    else
+    {
+      responseDiv.innerHTML=`<br/><br/><label style = "color:red">${rdata[1]}</label>`;
+    }
+  }
+
   render() {
     return (
       <div id='base'>
@@ -162,7 +202,7 @@ export class ProjectHomePage extends Component {
                  <label className='passwordLabel'>Password:</label>
                  <input type='password' id = 'password' />
                  <div className='forgotPassword'>Forgot<label onClick={this.forgotPassword}>Password?</label></div>
-                 <button className='signinButton'>Sign In</button>
+                 <button className='signinButton' onClick={this.signin}>Sign In</button>
          
           <div className='div1' id='responseDiv'></div>
           <div className='div2'>

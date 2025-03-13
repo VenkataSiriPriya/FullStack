@@ -1,3 +1,6 @@
+
+export const BASEURL = "http://localhost:8080/";
+
 //CallApi
 export function callApi(reqmethod, url, data, responseHandler){
     var option;
@@ -14,3 +17,21 @@ export function callApi(reqmethod, url, data, responseHandler){
          .then(data => responseHandler(data))
          .catch(error => alert(error));
 }
+
+export function setSession(sesname,sesvalue,expday)
+{
+     let D = new Date();
+     D.setTime(D.getTime() + expday * 3600000);
+     document.cookie = `${sesname} = ${sesvalue}; expires = ${D.toUTCString()}; path=/secure`;
+}
+
+export function getSession(sesname)
+{
+     let decodedCookie = decodeURIComponent(document.cookie);
+     let cookieData = decodedCookie.split(';');
+     for (let x in cookieData)
+          if(cookieData[x].includes(sesname))
+               return cookieData[x].substring(cookieData[x].indexOf(sesname) + sesname.length+1);
+          return "";
+}
+
