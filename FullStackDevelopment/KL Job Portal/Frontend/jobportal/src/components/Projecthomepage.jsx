@@ -179,7 +179,7 @@ export class ProjectHomePage extends Component {
   signinResponse(res)
   {
     let rdata=res.split('::');
-    if(radta[0]==='200')
+    if(rdata[0]==='200')
     {
       setSession("csrid",rdata[1],1);
       window.location.replace("/dashboard");

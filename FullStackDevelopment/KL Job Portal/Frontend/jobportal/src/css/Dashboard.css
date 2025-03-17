@@ -1,0 +1,38 @@
+.dashboard{
+    width: 100%;
+    height: 100%;
+    background: whitesmoke;
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-template-columns: 200px auto;
+    gap: 1px;
+}
+.dashboard .header{
+    background: wheat;
+    grid-column: 1 / span 2;
+    border-bottom: 1px solid rgb(0,0,0,0.1);
+}
+.dashboard .menu{
+    background: rgb(8, 174, 8);
+    border-radius: 1px solid rgb(0,0,0,0.1);
+}
+.dashboard .outlet{
+    background: blue;
+}
+.header .logo{
+    width: 70px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.header .logout{
+    width: 24px;
+    float: right;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+.header label{
+    font-weight: bold;
+    float: right;
+    margin-right: 10px;
+}
