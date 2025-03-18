@@ -11,6 +11,7 @@ import Form from './components/Ex5/Form.jsx';
 import Navbar from './components/Ex5/Navbar.jsx';
 import Users from './components/Ex6/Users.jsx'
 import Weather from './components/Ex6/Weather.jsx'
+import Ex9 from './components/Ex9/Ex9.jsx';
 
 import{createStore}from 'redux'
 var store=createStore(NavReducer)
@@ -25,6 +26,7 @@ var customer=()=> createRoot(document.getElementById('root')).render(
       <Route path='/navbar' element={<Navbar />} />
       <Route path='/Ex6' element={<Users/>}/>
       <Route path='/s' element={<Weather/>}/>
+      <Route path='/ex9' element={<Ex9 />}/>
 
 
     </Routes>
