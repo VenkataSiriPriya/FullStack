@@ -22,7 +22,7 @@ export function setSession(sesname,sesvalue,expday)
 {
      let D = new Date();
      D.setTime(D.getTime() + expday * 3600000);
-     document.cookie = `${sesname} = ${sesvalue}; expires = ${D.toUTCString()}; path=/secure`;
+     document.cookie = `${sesname} = ${sesvalue}; expires = ${D.toUTCString()}; path=/;secure`;
 }
 
 export function getSession(sesname)
