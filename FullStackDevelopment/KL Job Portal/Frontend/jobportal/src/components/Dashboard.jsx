@@ -33,7 +33,7 @@ export class Dashboard extends Component {
       <div className='dashboard'>
         <div className='header'>
         <img className='logo' src='./images/logo1.png' alt='no' />
-        <img className='logout' onClick={()=>this.logout()} src='./images/logout.png' alt='no' />
+        <img className='logout' onClick={()=>this.logout()} src='./images/logout.jpg' alt='no' />
         <label>{fullname}</label>
         </div>
         <div className='menu'>MENU</div>
