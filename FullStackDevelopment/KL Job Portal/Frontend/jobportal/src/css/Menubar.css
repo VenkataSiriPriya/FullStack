@@ -1,53 +1,48 @@
 .menubar {
-    width: 250px;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .menuheader {
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 8px;
-  }
-  
-  .menuheader img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .menulist {
-    margin-top: 10px;
-  }
-  
-  .menulist ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .menulist li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #555;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .menulist li:hover {
-    background-color: #555;
-  }
-  
-  .menulist img {
-    width: 20px;
-    height: 20px;
-  }
-  
+  background-color: beige; /* Light background color */
+  border: 1px solid #dee2e6; /* Border around the menu */
+  border-radius: 5px; /* Rounded corners */
+  width: 250px; /* Fixed width for the menu */
+  box-shadow: 0 2px 5px coral; /* Subtle shadow */
+  font-family: Arial, sans-serif; /* Font style */
+}
+
+.menuheader {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Padding around the header */
+  background-color: #910b16; /* Header background color */
+  color: rgb(11, 11, 11); /* Text color */
+  font-size: 18px; /* Font size */
+}
+
+.menuheader img {
+  margin-left: 10px; /* Space between text and image */
+  width:2px; /* Image width */
+  height:2px; /* Image height */
+}
+
+.menulist {
+  padding: 10px; /* Padding around the list */
+}
+
+.menulist ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.menulist li {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  padding: 8px; /* Padding for list items */
+  border-bottom: 1px solid coral; /* Bottom border for separation */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.menulist li img {
+  margin-left: 10px; /* Space between text and image */
+  width: 16px; /* Image width */
+  height: 16px; /* Image height */
+}

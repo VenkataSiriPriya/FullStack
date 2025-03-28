@@ -1,7 +1,6 @@
 
 export const BASEURL = "http://localhost:8080/";
 
-//CallApi
 export function callApi(reqmethod, url, data, responseHandler){
     var option;
     if(reqmethod === "GET" || reqmethod === "DELETE")

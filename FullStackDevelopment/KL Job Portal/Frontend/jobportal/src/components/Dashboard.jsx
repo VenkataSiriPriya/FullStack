@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import'../css/Dashboard.css';
+import '../css/Menubar.css';
+import Menubar from './Menubar';
+
 import { BASEURL, callApi, getSession, setSession } from '../api';
 
 export class Dashboard extends Component { 
@@ -36,7 +39,7 @@ export class Dashboard extends Component {
         <img className='logout' onClick={()=>this.logout()} src='./images/logout.jpg' alt='no' />
         <label>{fullname}</label>
         </div>
-        <div className='menu'>MENU</div>
+        <div className='menu'><Menubar/></div>
         <div className='outlet'>OUTLET</div>
       </div>
     )
