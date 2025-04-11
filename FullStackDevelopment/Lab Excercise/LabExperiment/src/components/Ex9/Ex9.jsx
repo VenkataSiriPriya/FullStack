@@ -23,8 +23,7 @@ export default function StudentManagement() {
         <input
           type="text"
           placeholder="ID"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
+          value={id}          onChange={(e) => setId(e.target.value)}
         />
         <input
           type="text"
