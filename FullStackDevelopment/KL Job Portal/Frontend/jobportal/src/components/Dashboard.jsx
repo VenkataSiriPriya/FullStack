@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import'../css/Dashboard.css';
 import '../css/Menubar.css';
 import Menubar from './Menubar';
+import JobPosting from './JobPosting';
+import Profile from './Profile';
+import JobSearch from './JobSearch';
 
 import { BASEURL, callApi, getSession, setSession } from '../api';
 
@@ -9,8 +12,9 @@ export class Dashboard extends Component {
   constructor(props)
   {
     super(props);
-    this.state = {fullname : ''};
+    this.state = {fullname :",activeComponent:"};
     this.showFullname = this.showFullname.bind(this);
+    this.loadComponent = this.loadComponent.bind(this);
   }
   componentDidMount()
   {
@@ -30,8 +34,18 @@ export class Dashboard extends Component {
     setSession("csrid", "", -1);
     window.location.replace("/")
   }  
+
+  loadComponent(mid)
+  {
+    let componets={
+      "1":<JobPosting/>,
+      "2":<JobSearch/>,
+      "3":<Profile/>
+    };
+    this.setState({activeComponent:componets[mid]});
+  }
   render() {
-    const {fullname} = this.state;
+    const {fullname, activeComponent} = this.state;
     return (
       <div className='dashboard'>
         <div className='header'>
@@ -39,8 +53,9 @@ export class Dashboard extends Component {
         <img className='logout' onClick={()=>this.logout()} src='./images/logout.jpg' alt='no' />
         <label>{fullname}</label>
         </div>
-        <div className='menu'><Menubar/></div>
-        <div className='outlet'>OUTLET</div>
+        <div className='menu'>
+          <Menubar onMenuClick = {this.loadComponent}/></div>
+        <div className='outlet'>{activeComponent}</div>
       </div>
     )
   }

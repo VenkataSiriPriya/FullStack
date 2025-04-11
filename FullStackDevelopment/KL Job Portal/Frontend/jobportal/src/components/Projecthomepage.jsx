@@ -114,7 +114,7 @@ export class ProjectHomePage extends Component {
               role : role.value,
               password : signuppassword.value
         })
-        callApi("POST", "http://localhost:8080/users/signup/", data, this.getResponse)
+        callApi("POST", "http://localhost:8080/users/signup", data, this.getResponse)
   }
   getResponse(res){
     let resp = res.split('::');
